@@ -1,0 +1,25 @@
+# Your material and outputs — never committed
+/input/*
+/output/*
+!/input/.gitkeep
+!/output/.gitkeep
+
+# Your filled-in config (keep only the example in git)
+/config/brand.yaml
+
+# Working learnings file (seed is tracked; the live appended copy is not)
+/knowledge/eval-learnings.md
+
+# Secrets / env
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+*.swp

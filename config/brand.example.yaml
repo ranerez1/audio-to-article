@@ -1,0 +1,74 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# brand.yaml — the one file that personalizes the article engine.
+#
+# Copy this to `config/brand.yaml` and replace the values with your own.
+# The shipped values are a working example (a product consultancy) so the
+# pipeline runs out of the box; nothing here is required to stay.
+#
+# Every agent prompt and the playbook read identity, voice, links, and style
+# from this file instead of hardcoding them. Fill each field; leave a gap as
+# [NEED: ...] and the Critic will flag it.
+# ─────────────────────────────────────────────────────────────────────────────
+
+author:
+  name: "Ran Erez"
+  url: "https://re-focus.io/about"
+  job_title: "Founder, RE.FOCUS"
+  # Topics you have real authority on — becomes schema `knowsAbout` (E-E-A-T).
+  knows_about:
+    - "product discovery"
+    - "product strategy"
+    - "feature prioritization"
+    - "AI product development"
+    - "product leadership"
+  # Public profile links — becomes schema `sameAs`.
+  same_as:
+    - "https://linkedin.com/in/ran-erez"
+  # A short, real-experience anchor the writer can tie claims to (E-E-A-T).
+  # Keep it truthful and public — no private clients you can't name.
+  credibility: "years of hands-on product leadership at high-scale product companies"
+
+publisher:
+  name: "RE.FOCUS"
+  url: "https://re-focus.io"
+
+site:
+  base_url: "https://re-focus.io"
+  blog_path: "/blog"          # articles resolve to <base_url><blog_path>/<slug>
+
+voice:
+  # A few plain lines on how the author sounds. WRITE THIS YOURSELF as a
+  # paraphrase — do not paste private brand documents into a public repo.
+  summary: >
+    Direct, no-bullshit, evidence-based. Leads with the recommendation, then the
+    context. Reads like a practitioner who actually shipped, not a content mill.
+    Active voice. Concrete over abstract: names, numbers, and real scenarios
+    beat generalities.
+
+conversion:
+  # The engine adds at most two CTAs total (one mid-article, one closing).
+  primary_offer: "advisory"                     # a short label for your main offer
+  cta_url: "https://re-focus.io/contact"        # where the closing CTA points
+  secondary_link: "https://re-focus.io/blog"    # a soft secondary link
+
+style:
+  target_currency: "USD"      # monetary values are normalized to this
+  # Words that hard-fail the anti-slop gate (in addition to the universal AI tells).
+  banned_words:
+    - delve
+    - landscape
+    - synergy
+    - leverage
+    - robust
+    - streamline
+    - cutting-edge
+  word_count:
+    min: 900
+    max: 1500
+
+source:
+  # How the article should refer to its material. The finished piece reads as
+  # original thought-leadership in the author's voice — presented directly or as
+  # a conversation the author had — not a recap of the source. Keep it truthful
+  # for your material (an interview you ran, a talk, a working session, etc.).
+  framing: "a conversation the author had with a practitioner (role + company-type, never named)"
